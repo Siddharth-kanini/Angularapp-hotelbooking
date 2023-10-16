@@ -1,0 +1,60 @@
+@keyframes slideIn {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .animate-on-scroll {
+    animation: slideIn 0.6s ease-out;
+  }
+  
+  .animate-on-hover {
+    transition: transform 0.3s ease-out;
+  }
+  
+  .animate-on-hover:hover {
+    transform: scale(1.05);
+  }
+  
+  .hotel-name {
+    font-size: 20px;
+    font-weight: bold;
+  }
+  
+  .hotel-location,
+  .hotel-contact {
+    margin-bottom: 10px;
+  }
+  
+  .book-now-btn {
+    width: 100%;
+  }
+  
+  
+  .container {
+    margin-top: 50px;
+  }
+  
+  h4 {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  .btn-custom {
+    background-color: #b18800;
+    color: #fff;
+    font-weight: bold;
+    padding: 10px 5px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease-out, transform 0.3s ease-out;
+  }
+  
+  .btn-custom:hover {
+    background-color: #2659ff;
+    transform: scale(1.05);
+  }
+  

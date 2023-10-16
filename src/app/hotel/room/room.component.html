@@ -1,0 +1,23 @@
+<app-navbar></app-navbar>
+<br><br>
+<h1 class="catchy-heading">Discover Our Amazing Rooms</h1>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div *ngIf="rooms.length === 0">
+        No rooms available. sorry for the inconvenience
+      </div>
+      <div class="room-wrapper">
+        <div *ngFor="let roomType of uniqueRoomTypes" class="card">
+          <div class="card-body">
+            <img [src]="getRoomImage(roomType.type)" alt="{{ roomType.type }}" class="room-image">
+            <h5 class="room-name">{{ roomType.type }}</h5>
+            <p class="room-type">Available Rooms: {{ roomType.count }}</p>
+            <button class="btn btn-primary" [routerLink]="['/booking']">Book Now</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

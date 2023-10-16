@@ -1,0 +1,25 @@
+<app-navbar></app-navbar>
+
+<br>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h4>Discover Our Amazing Hotels</h4>
+    </div>
+    <br><br>
+    <div class="col-md-4" *ngFor="let hotel of hotels">
+      <div class="card animate-on-scroll">
+        <div class="card-body">
+          <h5 class="hotel-name">{{ hotel.name }}</h5>
+          <p class="hotel-location">Location: {{ hotel.location }}</p>
+          <p class="hotel-contact">Contact: {{ hotel.contactInfo }}</p>
+          <button class="btn btn-primary btn-custom book-now-btn animate-on-hover" (click)="viewRooms(hotel.hotelId)">View Rooms</button>
+        </div>
+      </div>
+      <br>
+    </div>
+  </div>
+</div>
+
+<app-footer></app-footer>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Admin Dashboard</title>
+  <script>
+    $(document).ready(function() {
+  $('.sidebar a').click(function(e) {
+    e.preventDefault();
+    var sectionId = $(this).attr('data-section');
+    $('.section').removeClass('active');
+    $('#' + sectionId).addClass('active');
+  });
+});
+
+  </script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+</head>
+
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="text-center">
+            <img src="logo.png" alt="Logo">
+            <h1>Hotel Name</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-lg-3 sidebar">
+        <ul class="list-unstyled">
+          <li class="active">
+            <a  data-section="profile">Profile</a>
+          </li>
+          <li>
+            <a  data-section="signup">Sign Up</a>
+          </li>
+          <li>
+            <a href="#" data-section="login">Login</a>
+          </li>
+          <li>
+            <a href="#" data-section="manage-hotels">Manage Hotels</a>
+          </li>
+          <li>
+            <a href="#" data-section="manage-bookings">Manage Bookings</a>
+          </li>
+          <li>
+            <a href="#" data-section="manage-customers">Manage Customers</a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-lg-9 content">
+        <section id="profile" class="section active">
+          <h2>Profile</h2>
+          <!-- Profile content here -->
+        </section>
+
+        <section id="signup" class="section">
+          <h2>Sign Up</h2>
+          <!-- Sign Up content here -->
+        </section>
+
+        <section id="login" class="section">
+          <h2>Login</h2>
+          <!-- Login content here -->
+        </section>
+
+        <section id="manage-hotels" class="section">
+          <h2>Manage Hotels</h2>
+          <!-- Manage Hotels content here -->
+        </section>
+
+        <section id="manage-bookings" class="section">
+          <h2>Manage Bookings</h2>
+          <!-- Manage Bookings content here -->
+        </section>
+
+        <section id="manage-customers" class="section">
+          <h2>Manage Customers</h2>
+          <!-- Manage Customers content here -->
+        </section>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>

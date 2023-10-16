@@ -1,0 +1,18 @@
+<app-navbar></app-navbar>
+
+<div class="user-profile">
+  <h2 *ngIf="firstName">Welcome, {{ firstName }}</h2>
+
+  <div *ngIf="!firstName">
+    <p>Please log in or sign up to view your profile.</p>
+    <button (click)="goToLogin()">Login</button>&nbsp;
+    <button (click)="goToSignup()">Signup</button>
+  </div>
+
+  <div class="customer-details" *ngIf="customerDetails">
+    <p><strong>Customer ID:</strong> {{ customerDetails.customerId }}</p>
+    <p><strong>Last Name:</strong> {{ customerDetails.lastName }}</p>
+    <p><strong>Contact Info:</strong> {{ customerDetails.contactInfo }}</p>
+    <button (click)="logout()">Logout</button>
+  </div>
+</div>

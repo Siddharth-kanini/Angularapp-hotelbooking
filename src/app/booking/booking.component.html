@@ -1,0 +1,72 @@
+<app-navbar></app-navbar>
+<br>
+<div class="booking-container">
+  <h2>Place your Booking here</h2>
+
+  <div class="booking-form">
+    <div class="form-group">
+      <label for="checkInDate">Check-in Date:</label>
+      <input type="date" id="checkInDate" name="checkInDate" [(ngModel)]="booking.checkInDate" required>
+    </div>
+    <div class="form-group">
+      <label for="checkOutDate">Check-out Date:</label>
+      <input type="date" id="checkOutDate" name="checkOutDate" [(ngModel)]="booking.checkOutDate" required>
+    </div>
+    <div class="form-group">
+      <label for="roomId">Room ID:</label>
+      <input type="number" id="roomId" name="roomId" [(ngModel)]="booking.roomId" required>
+    </div>
+    <div class="form-group">
+      <button type="submit" (click)="submitBooking()">Book</button>
+    </div>
+  </div>
+
+  <h3>My Bookings</h3>
+
+  <div class="booking-list">
+    <ul>
+      <li *ngFor="let booking of bookings" >
+        <div >
+          <div class="booking-details" (click)="openUpdateModal(booking)">
+            <span class="booking-id">Booking ID: {{ booking.bookingId }}</span>
+            <span class="check-in">Check-in: {{ booking.checkInDate | date }}</span>
+            <span class="check-out">Check-out: {{ booking.checkOutDate | date }}</span>
+            <span class="status">Status: {{ booking.status }}</span>
+          </div>
+          <br>
+          <div> 
+            <button  type="submit" (click)="deleteBooking(booking.bookingId)">Cancel Booking</button>
+          </div>
+        </div>
+      </li>
+      <li>
+
+      </li>
+      
+    </ul>
+  </div>
+
+  <!-- Update Booking Modal -->
+<div class="modal" [class.open]="isUpdateModalOpen">
+  <div class="modal-content">
+    <h2>Update Booking</h2>
+    <div class="form-group">
+      <label for="updateCheckInDate">Check-in Date:</label>
+      <input type="date" id="updateCheckInDate" name="updateCheckInDate" [(ngModel)]="selectedBooking.checkInDate" required>
+    </div>
+    <div class="form-group">
+      <label for="updateCheckOutDate">Check-out Date:</label>
+      <input type="date" id="updateCheckOutDate" name="updateCheckOutDate" [(ngModel)]="selectedBooking.checkOutDate" required>
+    </div>
+    <div class="form-group">
+      <label for="updateRoomId">Room ID:</label>
+      <input type="number" id="updateRoomId" name="updateRoomId" [(ngModel)]="selectedBooking.roomId" required>
+    </div>
+    <div class="form-group">
+      <button type="button" (click)="submitUpdate()">Update</button>&nbsp;
+      <button type="button" (click)="closeUpdateModal()">Cancel</button>
+    </div>
+  </div>
+</div>
+
+</div>
